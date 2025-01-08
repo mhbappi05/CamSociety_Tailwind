@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Book - CamSociety</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <div class="grid grid-cols-[200px_1fr] grid-rows-[auto_1fr] h-screen">
+    <!-- Header -->
+    <header class="bg-amber-400 flex justify-between items-center p-5 col-span-2">
+      <div class="text-2xl font-bold">CAMSOCIETY</div>
+      <nav class="space-x-5 text-black font-bold">
+        <a href="marketplaceAll.html" class="hover:text-amber-600">Market</a>
+        <a href="hirePhotographer.html" class="hover:text-amber-600">Photographer</a>
+        <a href="photosale.html" class="hover:text-amber-600">Photo Sale</a>
+        <a href="saleProducts.html" class="hover:text-amber-600">Sell Items</a>
+      </nav>
+      <div class="flex space-x-5">
+        <a href="#" class="hover:text-amber-600">Cart</a>
+        <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+        <a href="#" class="hover:text-amber-600">Profile</a>
+        <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="bg-amber-400 flex flex-col p-5 space-y-4 text-lg text-black font-bold">
+      <a href="#" class="hover:text-amber-600">Home</a>
+      <a href="#" class="hover:text-amber-600">Messages</a>
+      <a href="marketplaceAll.html" class="hover:text-amber-600">Marketplace</a>
+      <a href="photosale.html" class="hover:text-amber-600">Photo Sale</a>
+      <a href="hirePhotographer.html" class="hover:text-amber-600">Hire Photographer</a>
+      <a href="eventbooking.html" class="hover:text-amber-600">Book Event</a>
+      <a href="#" class="hover:text-amber-600">Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-5">
+      <div class="bg-white rounded-lg shadow-lg p-10 max-w-lg mx-auto">
+        <h1 class="text-2xl font-bold text-center mb-6">Book Your Event</h1>
+
+        <!-- Event Form -->
+        <form>
+          <div class="mb-4">
+            <label for="eventName" class="block text-gray-700 font-semibold">Event Name:</label>
+            <input type="text" id="eventName" placeholder="Enter event name"
+              class="w-full mt-2 p-3 border border-gray-300 rounded">
+          </div>
+
+          <div class="mb-4">
+            <label for="eventDate" class="block text-gray-700 font-semibold">Event Date:</label>
+            <input type="date" id="eventDate" class="w-full mt-2 p-3 border border-gray-300 rounded">
+          </div>
+
+          <div class="mb-4">
+            <label for="eventLocation" class="block text-gray-700 font-semibold">Event Location:</label>
+            <input type="text" id="eventLocation" placeholder="Enter location"
+              class="w-full mt-2 p-3 border border-gray-300 rounded">
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="block text-gray-700 font-semibold">Description:</label>
+            <textarea id="description" rows="4" placeholder="Add event description"
+              class="w-full mt-2 p-3 border border-gray-300 rounded"></textarea>
+          </div>
+
+          <div class="mb-6">
+            <label for="guests" class="block text-gray-700 font-semibold">Number of Guests:</label>
+            <input type="number" id="guests" placeholder="Enter number of guests"
+              class="w-full mt-2 p-3 border border-gray-300 rounded">
+          </div>
+
+          <button type="submit"
+            class="w-full bg-red-500 text-white py-3 rounded font-bold hover:bg-red-600 transition">
+            Submit Booking
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

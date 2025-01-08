@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile View - CamSociety</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <div class="grid grid-cols-[200px_1fr] grid-rows-[auto_1fr] h-screen">
+    <!-- Header -->
+    <header class="bg-amber-400 flex justify-between items-center p-5 col-span-2">
+      <div class="text-2xl font-bold">CAMSOCIETY</div>
+      <nav class="space-x-5 text-black font-bold">
+        <a href="marketplaceAll.html" class="hover:text-amber-600">Market</a>
+        <a href="hirePhotographer.html" class="hover:text-amber-600">Photographer</a>
+        <a href="photosale.html" class="hover:text-amber-600">Photo Sale</a>
+        <a href="saleProducts.html" class="hover:text-amber-600">Sell Items</a>
+      </nav>
+      <div class="flex space-x-5">
+        <a href="#" class="hover:text-amber-600">Cart</a>
+        <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+        <a href="#" class="hover:text-amber-600">Profile</a>
+        <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="bg-amber-400 flex flex-col p-5 space-y-4 text-lg text-black font-bold">
+      <a href="#" class="hover:text-amber-600">Home</a>
+      <a href="#" class="hover:text-amber-600">Messages</a>
+      <a href="marketplaceAll.html" class="hover:text-amber-600">Marketplace</a>
+      <a href="photosale.html" class="hover:text-amber-600">Photo Sale</a>
+      <a href="hirePhotographer.html" class="hover:text-amber-600">Hire Photographer</a>
+      <a href="eventbooking.html" class="hover:text-amber-600">Book Event</a>
+      <a href="#" class="hover:text-amber-600">Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-5">
+      <div class="bg-white shadow-lg rounded-lg p-10 max-w-xl mx-auto">
+        <div class="flex items-center mb-8">
+          <div class="w-24 h-24 rounded-full overflow-hidden">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="object-cover w-full h-full">
+          </div>
+          <div class="ml-6">
+            <h2 class="text-xl font-bold text-gray-800">John Doe</h2>
+            <p class="text-gray-600">Photographer & Event Specialist</p>
+            <p class="text-gray-600">Location: New York, USA</p>
+          </div>
+        </div>
+
+        <!-- Recent Reviews -->
+        <div class="mb-8">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Recent Reviews</h3>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <a href="#" class="text-red-500 hover:underline">Excellent photography for my wedding!</a>
+            </li>
+            <li>
+              <a href="#" class="text-red-500 hover:underline">Captured the best moments of my event!</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Previous Work -->
+        <div>
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Previous Work</h3>
+          <div class="grid grid-cols-4 gap-4">
+            <div class="bg-gray-100 p-3 rounded text-center">
+              <img src="https://via.placeholder.com/100" alt="Work 1" class="mx-auto mb-2">
+              <p>Wedding Event</p>
+            </div>
+            <div class="bg-gray-100 p-3 rounded text-center">
+              <img src="https://via.placeholder.com/100" alt="Work 2" class="mx-auto mb-2">
+              <p>Corporate Shoot</p>
+            </div>
+            <div class="bg-gray-100 p-3 rounded text-center">
+              <img src="https://via.placeholder.com/100" alt="Work 3" class="mx-auto mb-2">
+              <p>Outdoor Photoshoot</p>
+            </div>
+            <div class="bg-gray-100 p-3 rounded text-center">
+              <img src="https://via.placeholder.com/100" alt="Work 4" class="mx-auto mb-2">
+              <p>Fashion Shoot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
