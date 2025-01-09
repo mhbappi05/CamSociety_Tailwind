@@ -46,8 +46,9 @@
                     <button id="editProfile" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
                         Edit Profile
                     </button>
-                    <button id="upgradeAccount" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-                        Switch to Photographer
+                    <button id="upgradeAccount" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"><a
+                            href="user_to_PhotographerForm.html">Upgrade to Photographer Account</a>
+
                     </button>
                 </div>
             </div>
@@ -80,10 +81,11 @@
 
     <section id="photographerSection" class="max-w-4xl mx-auto mb-6 mt-6 bg-white shadow-md rounded-lg p-6 hidden">
         <h3 class="text-xl font-bold text-gray-800 mb-4">Photographer Account</h3>
+        <div class="bg-gray-50 shadow-md mb-6 mt-6 rounded-lg p-6">
+            <p class="text-yellow-500">My Work Ratings: 4.8/5 (25 reviews)</p>
+        </div>
         <!-- Reviews -->
         <div class="bg-gray-50 shadow-md mb-6 mt-6 rounded-lg p-6">
-
-
             <h4 class="text-lg font-bold text-gray-700">Your Reviews</h4>
             <ul class="mt-2 space-y-2">
                 <li class="text-gray-600">"Amazing work!" - 5 stars</li>
@@ -174,72 +176,6 @@
             &copy; 2025 CamSociety. All rights reserved.
         </div>
     </footer>
-
-
-    <script>
-        const upgradeButton = document.getElementById('upgradeAccount');
-        const photographerSection = document.getElementById('photographerSection');
-
-        upgradeButton.addEventListener('click', () => {
-            photographerSection.classList.toggle('hidden');
-            upgradeButton.textContent = photographerSection.classList.contains('hidden')
-                ? 'Switch to Photographer'
-                : 'Switch to Main Profile';
-        });
-
-        const servicesList = document.getElementById('servicesList');
-        const addServiceForm = document.getElementById('addServiceForm');
-        const newServiceInput = document.getElementById('newService');
-
-        addServiceForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const newService = newServiceInput.value.trim();
-            if (newService) {
-                const serviceItem = document.createElement('li');
-                serviceItem.className = 'flex justify-between items-center text-gray-600';
-                serviceItem.innerHTML = `
-                    ${newService}
-                    <button class="delete-service bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
-                `;
-                servicesList.appendChild(serviceItem);
-                newServiceInput.value = '';
-            }
-        });
-
-        servicesList.addEventListener('click', (event) => {
-            if (event.target.classList.contains('delete-service')) {
-                event.target.parentElement.remove();
-            }
-        });
-
-        const portfolioGrid = document.getElementById('portfolioGrid');
-        const addPortfolioForm = document.getElementById('addPortfolioForm');
-        const portfolioImageInput = document.getElementById('portfolioImage');
-
-        addPortfolioForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const file = portfolioImageInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const portfolioItem = document.createElement('div');
-
-                    portfolioItem.innerHTML = `
-    <img src="${e.target.result}" alt="Portfolio Item" class="rounded-md">
-    <button class="delete-portfolio bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
-  `;
-
-                    portfolioGrid.appendChild(portfolioItem);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        portfolioGrid.addEventListener('click', (event) => {
-            if (event.target.classList.contains('delete-portfolio')) {
-                event.target.parentElement.remove();
-            }
-        });
-    </script>
 </body>
 
 </html>

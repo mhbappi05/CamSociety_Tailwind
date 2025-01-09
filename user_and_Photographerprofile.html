@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Camera Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <!-- Header -->
+    <header class="bg-cyan-900 flex justify-between items-center p-5">
+        <div class="text-2xl text-cyan-50
+     font-bold">CAMSOCIETY</div>
+        <nav class="space-x-5 text-white font-bold">
+            <a href="marketplaceAll.html" class=" hover:text-cyan-500">Back</a>
+            <a href="#" class=" hover:text-cyan-500">Home</a>
+            <a href="marketplaceAll.html" class=" hover:text-cyan-500">Marketplace</a>
+            <a href="photosale.html" class=" hover:text-cyan-500">Photo Sale</a>
+            <a href="hirePhotographer.html" class=" hover:text-cyan-500">Hire Photographer</a>
+            <a href="eventbooking.html" class=" hover:text-cyan-500">Book Event</a>
+        </nav>
+        <div class="flex text-white space-x-5">
+            <a href="cart.html" class=" hover:text-cyan-500">Cart</a>
+            <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+            <a href="#" class=" hover:text-cyan-500">Messages</a>
+            <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+            <a href="#" class=" hover:text-cyan-500">Profile</a>
+            <span class="w-7 h-7 bg-red-500 rounded-full"></span>
+        </div>
+    </header>
+
+
+    <section class="max-w-4xl mx-auto mt-8 mb-6 bg-white shadow-md rounded-lg p-6">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-gray-300 rounded-full overflow-hidden">
+                <img src="assets/user.png" alt="Profile Picture" class="w-full h-full object-cover">
+            </div>
+            <div class="md:ml-8 mt-4 md:mt-0 text-center md:text-left">
+                <h2 class="text-2xl font-bold text-gray-800">Md. Mahmudul Hasan</h2>
+                <p class="text-gray-600">Bio</p>
+                <p class="mt-2 text-gray-500">Email: mhbappi05@gmail.com</p>
+                <p class="mt-1 text-gray-500">Phone: +880 1679861740</p>
+                <div class="mt-4 flex space-x-2">
+                    <button id="editProfile" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                        Edit Profile
+                    </button>
+                    <button id="upgradeAccount" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                        Switch to Photographer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto mt-6 mb-6">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Your Activities</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-100 p-4 rounded-md shadow-md">
+                    <h4 class="font-semibold text-gray-700">Your Bookings</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li class="text-gray-600">Wedding Shoot - Jan 20, 2025</li>
+                        <li class="text-gray-600">Product Photography - Feb 10, 2025</li>
+                    </ul>
+                    <button class="mt-2 text-blue-500 hover:underline">View All</button>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-md shadow-md">
+                    <h4 class="font-semibold text-gray-700">Your Listings</h4>
+                    <ul class="mt-2 space-y-2">
+                        <li class="text-gray-600">Canon EOS R5 - $3500</li>
+                        <li class="text-gray-600">Photography Lighting Kit - $200</li>
+                    </ul>
+                    <button class="mt-2 text-blue-500 hover:underline">Manage Listings</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="photographerSection" class="max-w-4xl mx-auto mb-6 mt-6 bg-white shadow-md rounded-lg p-6 hidden">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Photographer Account</h3>
+        <div class="bg-gray-50 shadow-md mb-6 mt-6 rounded-lg p-6">
+            <p class="text-yellow-500">My Work Ratings: 4.8/5 (25 reviews)</p>
+        </div>
+        <!-- Reviews -->
+        <div class="bg-gray-50 shadow-md mb-6 mt-6 rounded-lg p-6">
+            <h4 class="text-lg font-bold text-gray-700">Your Reviews</h4>
+            <ul class="mt-2 space-y-2">
+                <li class="text-gray-600">"Amazing work!" - 5 stars</li>
+                <li class="text-gray-600">"Highly professional!" - 4.5 stars</li>
+            </ul>
+            <button class="mt-2 text-blue-500 hover:underline">View All</button>
+
+        </div>
+        <div class="bg-gray-100 p-4 rounded-md shadow-md mb-6">
+            <h4 class="text-lg font-bold text-gray-700">Your Services</h4>
+            <ul id="servicesList" class="mt-4 space-y-2">
+                <li class="flex justify-between items-center text-gray-600">
+                    Wedding Photography
+                    <button class="delete-service bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
+                </li>
+                <li class="flex justify-between items-center text-gray-600">
+                    Event Photography
+                    <button class="delete-service bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
+                </li>
+            </ul>
+            <form id="addServiceForm" class="mt-4 flex space-x-2">
+                <input type="text" id="newService" class="w-full border-gray-300 rounded-md p-2"
+                    placeholder="Add a new service" />
+                <button type="submit"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Add</button>
+            </form>
+        </div>
+
+        <div class="bg-gray-100 shadow-md rounded-lg p-6">
+            <h4 class="text-lg font-bold text-gray-700">Your Portfolio</h4>
+            <div id="portfolioGrid" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="relative bg-gray-200 rounded-lg shadow-md p-4">
+                    <img src="https://via.placeholder.com/300" alt="Portfolio Item" class="rounded-md">
+                    <button
+                        class="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-md hover:bg-red-600 delete-portfolio">
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <form id="addPortfolioForm" class="mt-4" enctype="multipart/form-data">
+                <label class="block text-sm font-medium text-gray-700">Upload Portfolio Item</label>
+                <input type="file" id="portfolioImage" accept="image/*"
+                    class="mt-2 block w-full text-gray-600 border-gray-300 rounded-md">
+                <button type="submit" class="mt-2 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                    Upload
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- About -->
+            <div>
+                <h3 class="font-bold text-lg mb-2">About</h3>
+                <p>CamSociety is your one-stop platform for photographers and camera enthusiasts. Buy, sell, hire
+                    photographers, and rent equipment all in one place.</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Hire Photographer</a></li>
+                    <li><a href="#" class="hover:underline">Book Events</a></li>
+                    <li><a href="#" class="hover:underline">Sell Items</a></li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="font-bold text-lg mb-2">Contact</h3>
+                <p>Email: support@camsociety.com</p>
+                <p>Phone: 123-456-7890</p>
+                <p>Address: 123 Photo Street, Photography City</p>
+            </div>
+            <!-- FAQ -->
+            <div>
+                <h3 class="font-bold text-lg mb-2">FAQ</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">How to sell photos?</a></li>
+                    <li><a href="#" class="hover:underline">How to rent equipment?</a></li>
+                    <li><a href="#" class="hover:underline">Payment options</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 mt-6">
+            &copy; 2025 CamSociety. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script>
+        const upgradeButton = document.getElementById('upgradeAccount');
+        const photographerSection = document.getElementById('photographerSection');
+
+        upgradeButton.addEventListener('click', () => {
+            photographerSection.classList.toggle('hidden');
+            upgradeButton.textContent = photographerSection.classList.contains('hidden')
+                ? 'Switch to Photographer'
+                : 'Switch to Main Profile';
+        });
+
+        const servicesList = document.getElementById('servicesList');
+        const addServiceForm = document.getElementById('addServiceForm');
+        const newServiceInput = document.getElementById('newService');
+
+        addServiceForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newService = newServiceInput.value.trim();
+            if (newService) {
+                const serviceItem = document.createElement('li');
+                serviceItem.className = 'flex justify-between items-center text-gray-600';
+                serviceItem.innerHTML = `
+                    ${newService}
+                    <button class="delete-service bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
+                `;
+                servicesList.appendChild(serviceItem);
+                newServiceInput.value = '';
+            }
+        });
+
+        servicesList.addEventListener('click', (event) => {
+            if (event.target.classList.contains('delete-service')) {
+                event.target.parentElement.remove();
+            }
+        });
+
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const addPortfolioForm = document.getElementById('addPortfolioForm');
+        const portfolioImageInput = document.getElementById('portfolioImage');
+
+        addPortfolioForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const file = portfolioImageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const portfolioItem = document.createElement('div');
+
+                    portfolioItem.innerHTML = `
+    <img src="${e.target.result}" alt="Portfolio Item" class="rounded-md">
+    <button class="delete-portfolio bg-red-500 text-white p-1 rounded-md hover:bg-red-600">Delete</button>
+  `;
+
+                    portfolioGrid.appendChild(portfolioItem);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        portfolioGrid.addEventListener('click', (event) => {
+            if (event.target.classList.contains('delete-portfolio')) {
+                event.target.parentElement.remove();
+            }
+        });
+    </script>
+</body>
+
+</html>
